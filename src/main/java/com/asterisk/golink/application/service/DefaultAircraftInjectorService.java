@@ -14,6 +14,8 @@ import com.asterisk.golink.domain.service.RouteService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
+import java.sql.Timestamp;
+
 @Slf4j
 @Service
 @RequiredArgsConstructor
@@ -41,6 +43,8 @@ public class DefaultAircraftInjectorService implements AircraftInjectorService {
     log.info(RECEIVING_AIRCRAFT_DATA_FOR_AIRCRAFT_VIN, aircraft.getVin());
 
     Route route = routeService.findByAircraftId(aircraft.getVin());
+
+    route.calculateEstimateArrivalTime(aircraft.getPosition());
 
     Boolean isLanding =
         this.checkIfIsInTheAirfield(aircraft, route.getDestination());

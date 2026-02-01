@@ -1,8 +1,10 @@
 package com.asterisk.golink.domain.service;
 
+import java.sql.Timestamp;
 import java.util.List;
 import java.util.UUID;
 
+import com.asterisk.golink.domain.model.Aircraft;
 import com.asterisk.golink.domain.model.Route;
 
 public interface RouteService {
@@ -18,4 +20,5 @@ public interface RouteService {
   void updateRouteToDeparting(Route route);
 
   void updateRouteToInFlight(Route route);
+
 }
