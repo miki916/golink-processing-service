@@ -8,35 +8,17 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.messaging.Message;
 
-import com.asterisk.golink.infraestructure.repository.injector.properties.SqsProperties;
-
 import io.awspring.cloud.sqs.config.SqsMessageListenerContainerFactory;
 import io.awspring.cloud.sqs.listener.acknowledgement.AcknowledgementResultCallback;
 import io.awspring.cloud.sqs.listener.acknowledgement.handler.AcknowledgementMode;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import software.amazon.awssdk.auth.credentials.AwsBasicCredentials;
-import software.amazon.awssdk.auth.credentials.StaticCredentialsProvider;
-import software.amazon.awssdk.regions.Region;
 import software.amazon.awssdk.services.sqs.SqsAsyncClient;
 
 @Slf4j
 @Configuration
 @RequiredArgsConstructor
 public class SqsReceiver {
-
-  private final SqsProperties sqsProperties;
-
-  @Bean
-  SqsAsyncClient sqsAsyncClient() {
-
-    return SqsAsyncClient.builder()
-        .region(Region.of(sqsProperties.getRegion()))
-        .credentialsProvider(StaticCredentialsProvider
-            .create(AwsBasicCredentials.create(sqsProperties.getAccessKeyId(),
-                sqsProperties.getSecretAccessKey())))
-        .build();
-  }
 
   @Bean
   SqsMessageListenerContainerFactory<Object> defaultSqsListenerContainerFactory(
