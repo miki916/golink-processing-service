@@ -14,8 +14,6 @@ import com.asterisk.golink.domain.service.RouteService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
-import java.sql.Timestamp;
-
 @Slf4j
 @Service
 @RequiredArgsConstructor
@@ -35,6 +33,7 @@ public class DefaultAircraftInjectorService implements AircraftInjectorService {
       "[AIRCRAFT_INJECTOR_SERVICE] Aircraft VIN: {} is now in flight";
 
   private final AircraftService aircraftService;
+
   private final RouteService routeService;
 
   @Override

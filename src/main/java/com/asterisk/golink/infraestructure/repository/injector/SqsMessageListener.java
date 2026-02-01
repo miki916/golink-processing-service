@@ -32,7 +32,7 @@ public class SqsMessageListener {
   public static final String SQS_LISTENER_SUCCESSFULLY_PROCESSED_SQS_MESSAGE_FROM_QUEUE =
       "[SQS_LISTENER] Successfully processed SQS message from {} queue";
 
-  private final AircraftInjectorService aircraftInjectorService;
+  private final AircraftInjectorService service;
 
   private final AircraftSqsMapper aircraftSqsMapper;
 
@@ -60,7 +60,7 @@ public class SqsMessageListener {
           "AircraftSqsResponse",
           sqsQueueProperties.getAircraftData());
 
-      this.aircraftInjectorService
+      this.service
           .receiveAircraftData(aircraftSqsMapper.toDomain(aircraftData));
 
       log.info(SQS_LISTENER_SUCCESSFULLY_PROCESSED_SQS_MESSAGE_FROM_QUEUE,
