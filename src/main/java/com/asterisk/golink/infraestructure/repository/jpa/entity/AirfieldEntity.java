@@ -3,8 +3,8 @@ package com.asterisk.golink.infraestructure.repository.jpa.entity;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+import org.locationtech.jts.geom.Polygon;
 
-import java.awt.*;
 import java.util.UUID;
 
 @Getter

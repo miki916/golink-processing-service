@@ -6,6 +6,7 @@ import com.asterisk.golink.infraestructure.repository.jpa.JpaAircraftEntityRepos
 import com.asterisk.golink.infraestructure.repository.jpa.entity.AircraftEntity;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -20,13 +21,14 @@ public class DefaultAircraftService implements AircraftService {
         return repository.findAll();
     }
 
+    @Transactional
     @Override
     public void updateFlightInfo(Aircraft aircraft) {
 
         repository.updateFlightInfo(aircraft.getVin(),
                 aircraft.getAltitude(),
                 aircraft.getSpeed(),
-                aircraft.getStatus(),
+                aircraft.getFlightStatus().toString(),
                 aircraft.getPosition(),
                 aircraft.getOrientation());
 

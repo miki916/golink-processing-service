@@ -16,15 +16,15 @@ public class RouteEntity {
     @Column(name = "id")
     private Long id;
 
-    @ManyToOne
+    @ManyToOne()
     @JoinColumn(name = "origin")
     private AirfieldEntity origin;
 
-    @ManyToOne
+    @ManyToOne()
     @JoinColumn(name = "destination")
     private AirfieldEntity destination;
 
-    @ManyToOne
+    @ManyToOne()
     @JoinColumn(name = "aircraft_vin")
     private AircraftEntity aircraft;
 

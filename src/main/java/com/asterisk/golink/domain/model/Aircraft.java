@@ -1,9 +1,10 @@
 package com.asterisk.golink.domain.model;
 
+import com.asterisk.golink.domain.model.modelEnum.FlightStatusEnum;
 import lombok.Getter;
 import lombok.Setter;
+import org.locationtech.jts.geom.Point;
 
-import java.awt.*;
 import java.util.UUID;
 
 @Getter
@@ -18,7 +19,7 @@ public class Aircraft {
 
     private String status;
 
-    private String flightStatus;
+    private FlightStatusEnum flightStatus;
 
     private Point position;
 

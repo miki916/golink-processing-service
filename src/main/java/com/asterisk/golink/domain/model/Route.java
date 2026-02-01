@@ -1,5 +1,6 @@
 package com.asterisk.golink.domain.model;
 
+import com.asterisk.golink.domain.model.modelEnum.RouteStatusEnum;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -27,6 +28,6 @@ public class Route {
 
     private Integer duration;
 
-    private String status; // IN_FLIGHT, LANDING, CANCELLED, DEPARTING, SCHEDULED, COMPLETED
+    private RouteStatusEnum status; // IN_FLIGHT, LANDING, CANCELLED, DEPARTING, SCHEDULED, COMPLETED
 
 }

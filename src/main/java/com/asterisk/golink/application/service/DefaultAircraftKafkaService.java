@@ -3,6 +3,8 @@ package com.asterisk.golink.application.service;
 import com.asterisk.golink.domain.model.Aircraft;
 import com.asterisk.golink.domain.model.Airfield;
 import com.asterisk.golink.domain.model.Route;
+import com.asterisk.golink.domain.model.modelEnum.FlightStatusEnum;
+import com.asterisk.golink.domain.model.modelEnum.RouteStatusEnum;
 import com.asterisk.golink.domain.service.AircraftKafkaService;
 import com.asterisk.golink.domain.service.AircraftService;
 import com.asterisk.golink.domain.service.AirfieldService;
@@ -30,13 +32,13 @@ public class DefaultAircraftKafkaService implements AircraftKafkaService {
 
             if (aircraft.getAltitude() <= 0) {
 
-                aircraft.setStatus("ON_GROUND");
+                aircraft.setFlightStatus(FlightStatusEnum.ON_GROUND);
                 routeService.updateRouteToCompleted(route);
 
 
             } else {
 
-                aircraft.setStatus("AIRBORNE");
+                aircraft.setFlightStatus(FlightStatusEnum.AIRBORNE);
                 routeService.updateRouteToLanding(route);
 
             }
@@ -51,9 +53,9 @@ public class DefaultAircraftKafkaService implements AircraftKafkaService {
         if (isDeparting) {
 
             if (aircraft.getAltitude() <= 0) {
-                aircraft.setStatus("ON_GROUND");
+                aircraft.setFlightStatus(FlightStatusEnum.ON_GROUND);
             } else {
-                aircraft.setStatus("AIRBORNE");
+                aircraft.setFlightStatus(FlightStatusEnum.AIRBORNE);
             }
 
             routeService.updateRouteToDeparting(route);
@@ -62,9 +64,9 @@ public class DefaultAircraftKafkaService implements AircraftKafkaService {
 
         }
 
-        aircraft.setStatus("AIRBORNE");
+        aircraft.setFlightStatus(FlightStatusEnum.AIRBORNE);
 
-        if (!route.getStatus().equals("IN_FLIGHT")) {
+        if (!route.getStatus().equals(RouteStatusEnum.IN_FLIGHT)) {
             routeService.updateRouteToInFlight(route);
         }
 

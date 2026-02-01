@@ -1,7 +1,8 @@
 package com.asterisk.golink.infraestructure.repository.injecter;
 
-import com.asterisk.golink.domain.model.Aircraft;
 import com.asterisk.golink.domain.service.AircraftKafkaService;
+import com.asterisk.golink.infraestructure.repository.injecter.mapper.AircraftSqsMapper;
+import com.asterisk.golink.infraestructure.repository.injecter.response.AircraftSqsResponse;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.awspring.cloud.sqs.annotation.SqsListener;
 import lombok.RequiredArgsConstructor;
@@ -15,6 +16,7 @@ import org.springframework.stereotype.Component;
 public class SqsMessageListener {
 
     private final AircraftKafkaService aircraftKafkaService;
+    private final AircraftSqsMapper aircraftSqsMapper;
 
     @SqsListener("aircraft_data.fifo")
     public void receiveMessage(Message<?> message) {
@@ -24,9 +26,9 @@ public class SqsMessageListener {
         ObjectMapper mapper = new ObjectMapper();
         try {
 
-            Aircraft aircraftData = mapper.readValue(messageBody, Aircraft.class);
+            AircraftSqsResponse aircraftData = mapper.readValue(messageBody, AircraftSqsResponse.class);
 
-            this.aircraftKafkaService.receiveAircraftData(aircraftData);
+            this.aircraftKafkaService.receiveAircraftData(aircraftSqsMapper.toDomain(aircraftData));
 
         } catch (Exception e) {
             log.error("Error processing SQS message: {}", e.getMessage());
