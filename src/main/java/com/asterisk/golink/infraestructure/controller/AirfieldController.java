@@ -2,7 +2,8 @@ package com.asterisk.golink.infraestructure.controller;
 
 
 import com.asterisk.golink.domain.service.AirfieldService;
-import com.asterisk.golink.infraestructure.repository.jpa.entity.AirfieldEntity;
+import com.asterisk.golink.infraestructure.controller.mapper.AirfieldControllerMapper;
+import com.asterisk.golink.infraestructure.controller.response.AirfieldResponse;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,9 +21,11 @@ public class AirfieldController {
 
     private final AirfieldService service;
 
+    private final AirfieldControllerMapper mapper;
+
     @GetMapping()
-    public List<AirfieldEntity> getAllAirfield() {
-        return service.findAll();
+    public List<AirfieldResponse> getAllAirfield() {
+        return mapper.toResponseList(service.findAll());
     }
 
 

@@ -1,6 +1,6 @@
-package com.asterisk.golink.infraestructure.repository.injecter.configuration;
+package com.asterisk.golink.infraestructure.repository.injector.configuration;
 
-import com.asterisk.golink.infraestructure.repository.injecter.properties.SqsProperties;
+import com.asterisk.golink.infraestructure.repository.injector.properties.SqsProperties;
 import io.awspring.cloud.sqs.config.SqsMessageListenerContainerFactory;
 import io.awspring.cloud.sqs.listener.acknowledgement.AcknowledgementResultCallback;
 import io.awspring.cloud.sqs.listener.acknowledgement.handler.AcknowledgementMode;

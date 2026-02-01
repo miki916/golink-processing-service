@@ -1,8 +1,9 @@
 package com.asterisk.golink.infraestructure.controller;
 
 
-import com.asterisk.golink.domain.model.Route;
 import com.asterisk.golink.domain.service.RouteService;
+import com.asterisk.golink.infraestructure.controller.mapper.RouteControllerMapper;
+import com.asterisk.golink.infraestructure.controller.response.RouteResponse;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,9 +21,11 @@ public class RouteController {
 
     private final RouteService service;
 
+    private final RouteControllerMapper mapper;
+
     @GetMapping()
-    public List<Route> getAllRoute() {
-        return service.findAll();
+    public List<RouteResponse> getAllRoute() {
+        return mapper.toResponseList(service.findAll());
     }
 
 

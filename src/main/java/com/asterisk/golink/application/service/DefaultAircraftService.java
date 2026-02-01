@@ -1,9 +1,9 @@
 package com.asterisk.golink.application.service;
 
+import com.asterisk.golink.application.service.mapper.AircraftMapper;
 import com.asterisk.golink.domain.model.Aircraft;
 import com.asterisk.golink.domain.service.AircraftService;
 import com.asterisk.golink.infraestructure.repository.jpa.JpaAircraftEntityRepository;
-import com.asterisk.golink.infraestructure.repository.jpa.entity.AircraftEntity;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -16,9 +16,11 @@ public class DefaultAircraftService implements AircraftService {
 
     private final JpaAircraftEntityRepository repository;
 
+    private final AircraftMapper mapper;
+
     @Override
-    public List<AircraftEntity> findAll() {
-        return repository.findAll();
+    public List<Aircraft> findAll() {
+        return mapper.toDomainList(repository.findAll());
     }
 
     @Transactional

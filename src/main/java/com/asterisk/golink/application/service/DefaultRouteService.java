@@ -1,6 +1,7 @@
 package com.asterisk.golink.application.service;
 
 import com.asterisk.golink.application.service.mapper.RouteMapper;
+import com.asterisk.golink.domain.exception.DataNotFoundException;
 import com.asterisk.golink.domain.model.Route;
 import com.asterisk.golink.domain.model.modelEnum.RouteStatusEnum;
 import com.asterisk.golink.domain.service.RouteService;
@@ -30,7 +31,7 @@ public class DefaultRouteService implements RouteService {
     @Transactional(readOnly = true)
     @Override
     public Route findByAircraftId(UUID vin) {
-        return mapper.toDomain(repository.findByAircraftId(vin).orElse(null));
+        return mapper.toDomain(repository.findByAircraftId(vin).orElseThrow(() -> new DataNotFoundException("Route not found for aircraft VIN: " + vin)));
     }
 
     @Override

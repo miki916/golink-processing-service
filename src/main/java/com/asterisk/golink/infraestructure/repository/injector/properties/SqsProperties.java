@@ -1,4 +1,4 @@
-package com.asterisk.golink.infraestructure.repository.injecter.properties;
+package com.asterisk.golink.infraestructure.repository.injector.properties;
 
 import lombok.Getter;
 import lombok.Setter;

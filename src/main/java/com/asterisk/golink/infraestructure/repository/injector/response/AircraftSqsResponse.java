@@ -1,4 +1,4 @@
-package com.asterisk.golink.infraestructure.repository.injecter.response;
+package com.asterisk.golink.infraestructure.repository.injector.response;
 
 import com.asterisk.golink.infraestructure.serialization.PointDeserializer;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;

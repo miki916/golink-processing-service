@@ -1,11 +1,11 @@
 package com.asterisk.golink.domain.service;
 
-import com.asterisk.golink.infraestructure.repository.jpa.entity.AirfieldEntity;
+import com.asterisk.golink.domain.model.Airfield;
 
 import java.util.List;
 
 public interface AirfieldService {
 
-    List<AirfieldEntity> findAll();
+    List<Airfield> findAll();
 
 }

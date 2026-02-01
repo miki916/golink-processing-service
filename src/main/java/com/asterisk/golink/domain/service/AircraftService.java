@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface AircraftService {
 
-    List<AircraftEntity> findAll();
+    List<Aircraft> findAll();
 
     void updateFlightInfo(Aircraft aircraft);
 }
