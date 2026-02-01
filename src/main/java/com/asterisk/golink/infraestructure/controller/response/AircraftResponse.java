@@ -2,7 +2,7 @@ package com.asterisk.golink.infraestructure.controller.response;
 
 import lombok.Getter;
 import lombok.Setter;
-import org.geolatte.geom.Point;
+import org.locationtech.jts.geom.Point;
 
 import java.util.UUID;
 
@@ -20,7 +20,7 @@ public class AircraftResponse {
 
     private String flightStatus;
 
-    private Point<?> position;
+    private Point position;
 
     private String orientation;
 

@@ -36,7 +36,7 @@ public class SqsReceiver {
     SqsMessageListenerContainerFactory<Object> defaultSqsListenerContainerFactory(SqsAsyncClient sqsAsyncClient) {
         return SqsMessageListenerContainerFactory.builder()
                 .configure(options -> options.acknowledgementMode(AcknowledgementMode.ALWAYS)
-                        .acknowledgementInterval(Duration.ofSeconds(3)) // NOTE: With acknowledgementInterval 3 seconds,
+                        .acknowledgementInterval(Duration.ofSeconds(3))
                         .acknowledgementThreshold(0))
                 .acknowledgementResultCallback(new AckResultCallback()).sqsAsyncClient(sqsAsyncClient).build();
     }
