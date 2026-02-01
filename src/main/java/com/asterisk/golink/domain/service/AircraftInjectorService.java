@@ -4,6 +4,6 @@ import com.asterisk.golink.domain.model.Aircraft;
 
 public interface AircraftInjectorService {
 
-    void receiveAircraftData(Aircraft aircraft);
+  void receiveAircraftData(Aircraft aircraft);
 
 }

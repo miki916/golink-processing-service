@@ -1,9 +1,10 @@
 package com.asterisk.golink.infraestructure.repository.injector.properties;
 
-import lombok.Getter;
-import lombok.Setter;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
+
+import lombok.Getter;
+import lombok.Setter;
 
 @Getter
 @Setter
@@ -11,8 +12,8 @@ import org.springframework.stereotype.Component;
 @ConfigurationProperties(prefix = "aws.sqs")
 public class SqsProperties {
 
-    private String accessKeyId;
-    private String secretAccessKey;
-    private String region;
+  private String accessKeyId;
+  private String secretAccessKey;
+  private String region;
 
 }

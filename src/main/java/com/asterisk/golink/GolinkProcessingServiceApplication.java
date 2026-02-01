@@ -6,8 +6,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class GolinkProcessingServiceApplication {
 
-    public static void main(String[] args) {
-        SpringApplication.run(GolinkProcessingServiceApplication.class, args);
-    }
+  public static void main(String[] args) {
+
+    SpringApplication.run(GolinkProcessingServiceApplication.class, args);
+  }
 
 }

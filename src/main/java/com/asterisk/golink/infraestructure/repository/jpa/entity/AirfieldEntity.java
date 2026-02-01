@@ -1,29 +1,33 @@
 package com.asterisk.golink.infraestructure.repository.jpa.entity;
 
+import java.util.UUID;
+
+import org.locationtech.jts.geom.Polygon;
+
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
-import org.locationtech.jts.geom.Polygon;
-
-import java.util.UUID;
 
 @Getter
 @Setter
 @Entity
-@Table(name = "airfield", schema = "golink")
+@Table(
+    name = "airfield",
+    schema = "golink"
+)
 public class AirfieldEntity {
 
-    @Id
-    @GeneratedValue
-    @Column(name = "id")
-    private UUID id;
+  @Id
+  @GeneratedValue
+  @Column(name = "id")
+  private UUID id;
 
-    @Column(name = "name")
-    private String name;
+  @Column(name = "name")
+  private String name;
 
-    @Column(name = "location")
-    private Polygon location;
+  @Column(name = "location")
+  private Polygon location;
 
-    @Column(name = "country")
-    private String country;
+  @Column(name = "country")
+  private String country;
 }

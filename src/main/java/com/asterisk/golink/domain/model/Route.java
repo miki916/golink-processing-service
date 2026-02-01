@@ -1,33 +1,34 @@
 package com.asterisk.golink.domain.model;
 
+import java.sql.Timestamp;
+
 import com.asterisk.golink.domain.model.modelEnum.RouteStatusEnum;
+
 import lombok.Getter;
 import lombok.Setter;
-
-import java.sql.Timestamp;
 
 @Getter
 @Setter
 public class Route {
 
-    private Long id;
+  private Long id;
 
-    private Airfield origin;
+  private Airfield origin;
 
-    private Airfield destination;
+  private Airfield destination;
 
-    private Aircraft aircraft;
+  private Aircraft aircraft;
 
-    private Timestamp departureTime;
+  private Timestamp departureTime;
 
-    private Timestamp expectedDepartureTime;
+  private Timestamp expectedDepartureTime;
 
-    private Timestamp arrivalTime;
+  private Timestamp arrivalTime;
 
-    private Timestamp expectedArrivalTime;
+  private Timestamp expectedArrivalTime;
 
-    private Integer duration;
+  private Integer duration;
 
-    private RouteStatusEnum status; // IN_FLIGHT, LANDING, CANCELLED, DEPARTING, SCHEDULED, COMPLETED
+  private RouteStatusEnum status; // IN_FLIGHT, LANDING, CANCELLED, DEPARTING, SCHEDULED, COMPLETED
 
 }

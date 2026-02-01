@@ -1,26 +1,28 @@
 package com.asterisk.golink.infraestructure.repository.injector.response;
 
-import com.asterisk.golink.infraestructure.serialization.PointDeserializer;
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-import lombok.Getter;
-import lombok.Setter;
+import java.util.UUID;
+
 import org.locationtech.jts.geom.Point;
 
-import java.util.UUID;
+import com.asterisk.golink.infraestructure.serialization.PointDeserializer;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+
+import lombok.Getter;
+import lombok.Setter;
 
 @Getter
 @Setter
 public class AircraftSqsResponse {
 
-    private UUID vin;
+  private UUID vin;
 
-    @JsonDeserialize(using = PointDeserializer.class)
-    private Point position;
+  @JsonDeserialize(using = PointDeserializer.class)
+  private Point position;
 
-    private String orientation;
+  private String orientation;
 
-    private Long speed;
+  private Long speed;
 
-    private Long altitude;
+  private Long altitude;
 
 }

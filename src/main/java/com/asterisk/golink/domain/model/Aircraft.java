@@ -1,32 +1,34 @@
 package com.asterisk.golink.domain.model;
 
-import com.asterisk.golink.domain.model.modelEnum.FlightStatusEnum;
-import lombok.Getter;
-import lombok.Setter;
+import java.util.UUID;
+
 import org.locationtech.jts.geom.Point;
 
-import java.util.UUID;
+import com.asterisk.golink.domain.model.modelEnum.FlightStatusEnum;
+
+import lombok.Getter;
+import lombok.Setter;
 
 @Getter
 @Setter
 public class Aircraft {
 
-    private UUID vin;
+  private UUID vin;
 
-    private String model;
+  private String model;
 
-    private String company;
+  private String company;
 
-    private String status;
+  private String status;
 
-    private FlightStatusEnum flightStatus;
+  private FlightStatusEnum flightStatus;
 
-    private Point position;
+  private Point position;
 
-    private String orientation;
+  private String orientation;
 
-    private Long speed;
+  private Long speed;
 
-    private Long altitude;
+  private Long altitude;
 
 }

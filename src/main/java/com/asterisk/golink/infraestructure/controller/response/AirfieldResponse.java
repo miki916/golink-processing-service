@@ -1,20 +1,21 @@
 package com.asterisk.golink.infraestructure.controller.response;
 
-import lombok.Getter;
-import lombok.Setter;
+import java.util.UUID;
+
 import org.locationtech.jts.geom.Polygon;
 
-import java.util.UUID;
+import lombok.Getter;
+import lombok.Setter;
 
 @Getter
 @Setter
 public class AirfieldResponse {
 
-    private UUID id;
+  private UUID id;
 
-    private String name;
+  private String name;
 
-    private Polygon location;
+  private Polygon location;
 
-    private String country;
+  private String country;
 }

@@ -1,11 +1,13 @@
 package com.asterisk.golink.infraestructure.repository.jpa;
 
-import com.asterisk.golink.infraestructure.repository.jpa.entity.AirfieldEntity;
+import java.util.UUID;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import java.util.UUID;
+import com.asterisk.golink.infraestructure.repository.jpa.entity.AirfieldEntity;
 
 @Repository
-public interface JpaAirfieldEntityRepository extends JpaRepository<AirfieldEntity, UUID> {
+public interface JpaAirfieldEntityRepository
+    extends JpaRepository<AirfieldEntity, UUID> {
 }

@@ -2,7 +2,8 @@ package com.asterisk.golink.domain.exception;
 
 public class ValidationException extends RuntimeException {
 
-    public ValidationException(String message ) {
-        super(message);
-    }
+  public ValidationException(String message) {
+
+    super(message);
+  }
 }

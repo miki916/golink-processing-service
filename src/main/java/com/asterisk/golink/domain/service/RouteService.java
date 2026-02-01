@@ -1,21 +1,21 @@
 package com.asterisk.golink.domain.service;
 
-import com.asterisk.golink.domain.model.Route;
-
 import java.util.List;
 import java.util.UUID;
 
+import com.asterisk.golink.domain.model.Route;
+
 public interface RouteService {
 
-    List<Route> findAll();
+  List<Route> findAll();
 
-    Route findByAircraftId(UUID vin);
+  Route findByAircraftId(UUID vin);
 
-    void updateRouteToCompleted(Route route);
+  void updateRouteToCompleted(Route route);
 
-    void updateRouteToLanding(Route route);
+  void updateRouteToLanding(Route route);
 
-    void updateRouteToDeparting(Route route);
+  void updateRouteToDeparting(Route route);
 
-    void updateRouteToInFlight(Route route);
+  void updateRouteToInFlight(Route route);
 }

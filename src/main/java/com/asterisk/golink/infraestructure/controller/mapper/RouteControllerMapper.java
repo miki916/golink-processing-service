@@ -1,15 +1,16 @@
 package com.asterisk.golink.infraestructure.controller.mapper;
 
-import com.asterisk.golink.domain.model.Route;
-import com.asterisk.golink.infraestructure.controller.response.RouteResponse;
+import java.util.List;
+
 import org.mapstruct.Mapper;
 
-import java.util.List;
+import com.asterisk.golink.domain.model.Route;
+import com.asterisk.golink.infraestructure.controller.response.RouteResponse;
 
 @Mapper(componentModel = "spring")
 public interface RouteControllerMapper {
 
-    RouteResponse toResponse(Route domain);
+  RouteResponse toResponse(Route domain);
 
-    List<RouteResponse> toResponseList(List<Route> domainList);
+  List<RouteResponse> toResponseList(List<Route> domainList);
 }
